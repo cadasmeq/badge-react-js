@@ -1,0 +1,25 @@
+¿Que es un componente?
+
+Bloques de construcción, las aplicaciones hechas en react son como figuras
+de Lego. JUnta varias piezas (los componentes) y pueden construir un website
+tan pequeño o tan grande como quieras.
+
+Componente vs Elemento
+
+Un elemento es a un objecto como un componente es a una clase.
+Si el elemento fuera una casa, el componente serían los planos de arquitectura
+de la casa.
+
+Identificación de componentes
+
+Dos preguntas guías:
+- ¿Qué elementos se repiten?
+- ¿Qué elementos cumplen una función muy específica?
+
+Elementos con una función específica
+ - Sirven para encapsular lógica.
+ - Permiten juntar muchos comportamientos y aspectos visuales en un solo lugar.
+
+ Identificar componentes es una habilidad escencial para desarrollar aplicaciones React.
+
+ En React, los componentes son un componente principal para el desarrollo frontend.
