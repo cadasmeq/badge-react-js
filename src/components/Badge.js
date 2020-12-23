@@ -13,7 +13,7 @@ class Badge extends React.Component {
         <div className="Badge__section-name">
           <img
             className="Badge__avatar"
-            src="https://gravatar.com/avatar?d=identicon"
+            src="https://en.gravatar.com/userimage/193409316/4fff68e5dd6d8d1024f34605b04c41f1.jpg?size=200"
             alt="Avatar"
           />
           <h1>
