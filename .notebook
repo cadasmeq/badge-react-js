@@ -23,3 +23,18 @@ Elementos con una función específica
  Identificar componentes es una habilidad escencial para desarrollar aplicaciones React.
 
  En React, los componentes son un componente principal para el desarrollo frontend.
+
+
+ Manejo de Estados
+ 
+ Existen maneras en que los componentes pueden producir su propia información y guardarla para ser consumida o pasada a otros componentes a travpes de sus props. La clave está en que la información del state a otros componentes pasará en una sola dirección y podrá ser consumida pero no modificada.
+
+ * Para guardar la información en el estado se usa una función de la clase component llamada setState a la cual se le debe pasar un objeto con la información que se quiere guardar.
+
+ * Aunque no se ve, la información está siendo guardada en dos sitios, Cada input guarda su propio valor y al tiempo está guardando en setState, lo cual no es ideal. Para solucionarlo hay que modificar los inputs de un estado de no controlados a controlados.
+
+ Levantamiento del Estados
+ 
+ Levantar el estado es una técnica de React que pone el estado en una localización donde se pueda pasar como propos a los componentes. LO ideal es poner el estado en el lugar más cercano a todos los componmentes que quieren compartir esa información.
+
+ Algo interesante que le da el nombrre a reactes su parte de "reactividad", ya que cada vez que hay un cambio en el estado o en los props que recibe un componente se vuelve a renderizar todo el componente y todos sus descendientes.
