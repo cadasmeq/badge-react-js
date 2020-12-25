@@ -1,8 +1,9 @@
 import React from "react";
 
-import "./BadgeNew.css";
+import "../pages/styles/BadgeNew.css";
 import header from "../../images/badge-header.svg";
 import Navbar from "../../components/Navbar";
+import BadgeForm from "../../components/BadgeForm";
 import Badge from "../Badge";
 
 class BadgeNew extends React.Component {
@@ -16,7 +17,7 @@ class BadgeNew extends React.Component {
 
         <div className="container">
           <div className="row">
-            <div className="col">
+            <div className="col-6">
               <Badge
                 avatarUrl="https://en.gravatar.com/userimage/193409316/4fff68e5dd6d8d1024f34605b04c41f1.jpg?size=200"
                 firstName="Naivy"
@@ -24,6 +25,9 @@ class BadgeNew extends React.Component {
                 jobTitle="CEO - IWATCHU"
                 twitter="watchyou"
               />
+            </div>
+            <div className="col-6">
+              <BadgeForm />
             </div>
           </div>
         </div>
