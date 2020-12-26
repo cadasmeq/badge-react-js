@@ -53,3 +53,19 @@ React Router (v4) : Nos da las herramientas para poder hacer SPA fácilmente. Us
     - Route: CUando hay un match con el path, se hace el render del componente. El component va a recibir tres props: match, history, location.
     - Switch: Dentro de Switch solamente van elementos de Route. Switch se asegura que solamente un Route se renderize.
     - Link: Toma el lugar del elemento <a>, evita que se recargue la página completamente y actualiza la URL.
+
+# Introducción al Ciclo de Vida de un componmentes
+
+CUando React Renderiza los componentes decimos que entran en escena. Cuando su estado cambia o recibe unos props diferentes se actualizan y cuando cambiamos de página se dice que se desmotan.
+
+Montaje:
+    - Representan el momento donde se inserta el código del componente en el DOM
+    - Se llaman tres métodos: constructor, render, componentDidMount
+
+Actualización:
+    - Ocurre cuando los props o el estado del componente cambian.
+    - Se llaman dos métodos: render, componentDidUpdate.
+
+Desmontaje:
+    - Nos da la oportunidad de hacer limpieza de nuestro componente.
+    - Se llama un método: componentWillUnmount    
