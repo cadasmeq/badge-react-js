@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 
 import "../pages/styles/Badges.css";
 import confLogo from "../../images/badge-header.svg";
-import Navbar from "../Navbar";
 import BadgesList from "../BadgesList";
 
 class Badges extends React.Component {
@@ -44,9 +43,7 @@ class Badges extends React.Component {
 
   render() {
     return (
-      <div>
-        <Navbar />
-
+      <React.Fragment>
         <div className="Badges">
           <div className="Badges__hero">
             <div className="Badges__container">
@@ -70,7 +67,7 @@ class Badges extends React.Component {
         <div className="Badges__list">
           <BadgesList badges={this.state.data} />
         </div>
-      </div>
+      </React.Fragment>
     );
   }
 }
