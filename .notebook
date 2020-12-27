@@ -56,7 +56,7 @@ React Router (v4) : Nos da las herramientas para poder hacer SPA fácilmente. Us
 
 # Introducción al Ciclo de Vida de un componmentes
 
-CUando React Renderiza los componentes decimos que entran en escena. Cuando su estado cambia o recibe unos props diferentes se actualizan y cuando cambiamos de página se dice que se desmotan.
+Cuando React Renderiza los componentes decimos que entran en escena. Cuando su estado cambia o recibe unos props diferentes se actualizan y cuando cambiamos de página se dice que se desmotan.
 
 Montaje:
     - Representan el momento donde se inserta el código del componente en el DOM
@@ -68,4 +68,11 @@ Actualización:
 
 Desmontaje:
     - Nos da la oportunidad de hacer limpieza de nuestro componente.
-    - Se llama un método: componentWillUnmount    
+    - Se llama un método: componentWillUnmount
+
+# Introducción a las Llamadas de APIs
+
+Las llamadas a una API siguen un patron similar siempre que se realizan. Cada llamada consta de tres estados:
+    - Loading: Cuando la petición se envía y estamos esperando.
+    - Error: Se debe dejar un mensaje para el usuario para arreglar el error o volver a intentarlo.
+    - Data: Los datos nos pueden llegar de dos formas, o en error o con los datos requeridos.
