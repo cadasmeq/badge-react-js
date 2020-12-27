@@ -5,7 +5,7 @@ class RickAndMortyList extends React.Component {
   render() {
     return (
       <ul className="list-unstyled CharacterList">
-        {this.props.characters.map((character) => {
+        {this.props.characters.results.map((character) => {
           return (
             <li key={character.id} className="CharacterListItem">
               <img

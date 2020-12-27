@@ -3,45 +3,50 @@ import RickAndMortyLogo from "../../images/rick-and-morty.svg";
 import "../../components/pages/styles/RickAndMorty.css";
 import RickAndMortyList from "./RickAndMortyList";
 
+import { CircleLoading } from "react-loadingg";
+
 class RickAndMorty extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: [],
+      nextPage: 1,
+      loading: true,
+      error: null,
+      data: {
+        results: [],
+      },
     };
     console.log("1. constructor");
   }
+
   componentDidMount() {
     console.log("3. componentDidMount");
-    this.setState({
-      data: [
-        {
-          id: 2,
-          name: "Morty Smith",
-          status: "Alive",
-          species: "Human",
-          type: "",
-          gender: "Male",
-          origin: {
-            name: "Earth",
-            url: "https://rickandmortyapi.com/api/location/1",
-          },
-          location: {
-            name: "Earth",
-            url: "https://rickandmortyapi.com/api/location/20",
-          },
-          image: "https://rickandmortyapi.com/api/character/avatar/2.jpeg",
-          episode: [
-            "https://rickandmortyapi.com/api/episode/1",
-            "https://rickandmortyapi.com/api/episode/2",
-            // ...
-          ],
-          url: "https://rickandmortyapi.com/api/character/2",
-          created: "2017-11-04T18:50:21.651Z",
-        },
-      ],
-    });
+    this.fetchCharacters();
   }
+
+  fetchCharacters = async () => {
+    this.setState({ loading: true, error: null });
+    try {
+      const response = await fetch(
+        `https://rickandmortyapi.com/api/character?page=${this.state.nextPage}`
+      );
+      const data = await response.json();
+
+      this.setState({
+        loading: false,
+        data: {
+          info: data.info,
+          results: [].concat(this.state.data.results, data.results),
+        },
+        nextPage: this.state.nextPage + 1,
+      });
+    } catch (error) {
+      this.setState({
+        loading: false,
+        error: error,
+      });
+    }
+  };
 
   render() {
     console.log("2. render");
@@ -61,6 +66,16 @@ class RickAndMorty extends React.Component {
         <div className="Characters__container">
           <div className="Characters__list">
             <RickAndMortyList characters={this.state.data} />
+            {this.state.loading ? (
+              <CircleLoading />
+            ) : (
+              <button
+                className="btn btn-primary"
+                onClick={() => this.fetchCharacters()}
+              >
+                Get Characters
+              </button>
+            )}
           </div>
         </div>
       </React.Fragment>
