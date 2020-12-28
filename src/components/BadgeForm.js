@@ -13,18 +13,18 @@ class BadgeForm extends React.Component {
     console.log("button was clicked");
   };
 
-  handleOnSubmit = (e) => {
-    e.preventDefault();
-    console.log("Form was submitted");
-    console.log(this.state);
-  };
+  // handleOnSubmit = (e) => {
+  //   e.preventDefault();
+  //   console.log("Form was submitted");
+  //   console.log(this.state);
+  // };
 
   render() {
     return (
       <div>
         <h1>New Attendant</h1>
 
-        <form onSubmit={this.handleOnSubmit}>
+        <form onSubmit={this.props.onSubmit}>
           <div className="form-group">
             <label htmlFor="">First Name: </label>
             <input
@@ -78,6 +78,10 @@ class BadgeForm extends React.Component {
           <button onClick={this.handleClick} className="btn btn-primary">
             Save
           </button>
+
+          {this.props.error ? (
+            <p className="text-danger">{this.props.error.message}</p>
+          ) : null}
         </form>
       </div>
     );

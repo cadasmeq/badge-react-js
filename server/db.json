@@ -440,6 +440,30 @@
       "jobTitle": "Lawyer",
       "twitter": "ckaufmanpr",
       "id": "npaYZKI"
+    },
+    {
+      "firstName": "Cristopher",
+      "lastName": "Adasme",
+      "email": "cadasmeq@gmail.com",
+      "jobTitle": "NewMeta - CEO",
+      "twitter": "cadasmeq",
+      "id": "74wZ27y"
+    },
+    {
+      "firstName": "TEST",
+      "lastName": "TEST",
+      "email": "TEST@TEST.CL",
+      "jobTitle": "TEST",
+      "twitter": "TEST",
+      "id": "jm-w_mF"
+    },
+    {
+      "firstName": "Cristopher",
+      "lastName": "Adasme",
+      "email": "TEST@TEST.CL",
+      "jobTitle": "CEO - NewMeta",
+      "twitter": "asdasd",
+      "id": "HQPqOAR"
     }
   ]
 }
