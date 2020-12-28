@@ -6,8 +6,10 @@ import Home from "./pages/Home";
 import Badges from "./pages/Badges";
 import BadgeNew from "./pages/BadgeNew";
 import BadgeEdit from "./pages/BadgeEdit";
-import RickAndMorty from "./pages/RickAndMorty";
+import BadgeDetails from "./pages/BadgeDetails";
 import NotFound from "./NotFound";
+
+import RickAndMorty from "./pages/RickAndMorty";
 
 function App() {
   return (
@@ -17,6 +19,7 @@ function App() {
           <Route exact path="/" component={Home} />
           <Route exact path="/badges" component={Badges} />
           <Route exact path="/badges/new" component={BadgeNew} />
+          <Route exact path="/badges/:badgeId" component={BadgeDetails} />
           <Route exact path="/badges/:badgeId/edit" component={BadgeEdit} />
           <Route exact path="/rickandmorty" component={RickAndMorty} />
           <Route component={NotFound} />
