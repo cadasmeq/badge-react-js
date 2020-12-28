@@ -76,3 +76,22 @@ Las llamadas a una API siguen un patron similar siempre que se realizan. Cada ll
     - Loading: Cuando la petición se envía y estamos esperando.
     - Error: Se debe dejar un mensaje para el usuario para arreglar el error o volver a intentarlo.
     - Data: Los datos nos pueden llegar de dos formas, o en error o con los datos requeridos.
+
+
+# Portales Modales
+Hay mommentos en los que queremos renderizar un modal, un tooltip, etc. Esto puede volverse algo complicado ya sea por la presencia de un z-index o un overflow hidden.
+
+En estos casos lo ideal será renderizar en un nodo completamente aparte, y para esto React tiene una herramienta llamada Portales que funcionan parecido a ReactDOM.render; se les dice que se desea re nderizar y dónde, con la diferencia de que ese dónde puede ser fuera de la aplicación.
+
+Un portal es un contenido HTML que está fuera del contenedor (el div id="app") de tu aplicación principal, Nos resulta especialmente relevante para crear Modales sin complicaciones etremas en el diseño ya que el nodo se encuentra a la misma altura que el de la App.
+
+¿Como lo implementamos?
+1. Crea el contenedor de tu modal en tu archivo index.html <div id="modal"></div>
+2. En el componente donde lo vayas a utilizar importa el ReactDOM ya que a través de ReactDOM.createPortal() invocaremos el contenedor externo que acabamos de crear.
+3. Crea el Portal al componente a través de ReactDOM.createPortal()
+4. Pasa por parametro Qué renderizará y donde lo hará.
+
+ReactDOM.createPortal(
+    <Modal />,
+    document.getElementById("Modal)
+)
