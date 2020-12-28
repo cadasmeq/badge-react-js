@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import "../pages/styles/Badges.css";
 import confLogo from "../../images/badge-header.svg";
 import BadgesList from "../BadgesList";
+import PageLoading from "../PageLoading";
+import api from "../../api";
 
 class Badges extends React.Component {
   constructor(props) {
@@ -19,43 +21,28 @@ class Badges extends React.Component {
     this.fetchData();
   }
 
-  fetchData = () => {
+  fetchData = async () => {
     this.setState({
       loading: true,
       error: null,
     });
 
     try {
-      const data = [];
+      const data = await api.badges.list();
       this.setState({ loading: false, data: data });
     } catch (error) {
       this.setState({ loading: false, error: error });
     }
   };
 
-  componentDidUpdate(prevProps, prevState) {
-    console.log("5. componentDidUpdate");
-
-    console.log({
-      prevProps: prevProps,
-      prevState: prevState,
-    });
-
-    console.log({
-      props: this.props,
-      state: this.state,
-    });
-  }
-
-  componentWillUnmount() {
-    console.log("6. componentWillUnmount");
-    clearTimeout(this.timeoutId);
-  }
-
   render() {
     console.log("2. render");
     if (this.state.loading) {
-      return "Loading...";
+      return <PageLoading />;
+    }
+
+    if (this.state.error) {
+      return `Error:  ${this.state.error.message}`;
     }
 
     return (
